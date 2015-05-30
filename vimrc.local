@@ -1,0 +1,131 @@
+" Enhance command-line completion
+set wildmenu
+" Optimize for fast terminal connections
+set ttyfast
+" Highlight current line
+set cursorline
+" Highlight searches
+set hlsearch
+" Ignore case of searches
+set ignorecase
+" Show the current mode
+set showmode
+" Show the filename in the window titlebar
+set title
+" undo history size
+set history=10000
+" Show matching brackets when text indicator is over them
+set showmatch
+" How many tenths of a second to blink when matching brackets
+set mat=2
+
+" Colorscheme settings
+let g:rehash256 = 1
+set t_Co=256
+set background=dark
+let g:molokai_original = 1
+colorscheme molokai
+
+" if has("gui_macvim")
+"  set guifont=Inconsolata\ for\ Powerline:h13
+" endif
+
+" Indentation rules
+" set smartindent
+" set softtabstop=2
+" set autoindent
+" set copyindent
+
+" highlight all the column after the 80th
+highlight ColorColumn ctermbg=235 guibg=#2c2d27
+let &colorcolumn="81,".join(range(81,999),",")
+
+" JSHint with syntastic on file open
+let g:syntastic_javascript_checkers = ['jshint']
+let g:syntastic_check_on_open = 1
+
+" Airline configuration
+" let g:airline_powerline_fonts = 1
+" let g:airline_theme='wombat'
+" activate tab in airline
+" let g:airline#extensions#tabline#enabled = 1
+" change tab separator symbol
+" let g:airline#extensions#tabline#left_sep = ' '
+" let g:airline#extensions#tabline#left_alt_sep = '|'
+
+"let g:indentLine_color_term = 235
+
+let g:lightline = {
+      \ 'colorscheme': 'wombat',
+      \ 'mode_map': { 'c': 'NORMAL' },
+      \ 'active': {
+      \   'left': [ [ 'mode', 'paste' ], [ 'fugitive', 'filename' ] ]
+      \ },
+      \ 'component_function': {
+      \   'modified': 'MyModified',
+      \   'readonly': 'MyReadonly',
+      \   'fugitive': 'MyFugitive',
+      \   'filename': 'MyFilename',
+      \   'fileformat': 'MyFileformat',
+      \   'filetype': 'MyFiletype',
+      \   'fileencoding': 'MyFileencoding',
+      \   'mode': 'MyMode',
+      \ },
+      \ 'separator': { 'left': '', 'right': '' },
+      \ 'subseparator': { 'left': '', 'right': '' }
+      \ }
+
+function! MyModified()
+  return &ft =~ 'help\|vimfiler\|gundo' ? '' : &modified ? '+' : &modifiable ? '' : '-'
+endfunction
+
+function! MyReadonly()
+  return &ft !~? 'help\|vimfiler\|gundo' && &readonly ? '' : ''
+endfunction
+
+function! MyFilename()
+  return ('' != MyReadonly() ? MyReadonly() . ' ' : '') .
+        \ (&ft == 'vimfiler' ? vimfiler#get_status_string() : 
+        \  &ft == 'unite' ? unite#get_status_string() : 
+        \  &ft == 'vimshell' ? vimshell#get_status_string() :
+        \ '' != expand('%:t') ? expand('%:t') : '[No Name]') .
+        \ ('' != MyModified() ? ' ' . MyModified() : '')
+endfunction
+
+function! MyFugitive()
+  if &ft !~? 'vimfiler\|gundo' && exists("*fugitive#head")
+    let _ = fugitive#head()
+    return strlen(_) ? ' '._ : ''
+  endif
+  return ''
+endfunction
+
+function! MyFileformat()
+  return winwidth(0) > 70 ? &fileformat : ''
+endfunction
+
+function! MyFiletype()
+  return winwidth(0) > 70 ? (strlen(&filetype) ? &filetype : 'no ft') : ''
+endfunction
+
+function! MyFileencoding()
+  return winwidth(0) > 70 ? (strlen(&fenc) ? &fenc : &enc) : ''
+endfunction
+
+function! MyMode()
+  return winwidth(0) > 60 ? lightline#mode() : ''
+endfunction
+
+let g:indent_guides_enable_on_vim_startup = 1
+let g:indent_guides_auto_colors = 0
+autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd ctermbg=234
+autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=235
+
+"au FileType javascript call JavaScriptFold()
+au BufNewFile,BufRead *.ejs set filetype=html
+
+" Automatically wrap at 80 characters for LaTeX
+autocmd BufRead,BufNewFile *.tex setlocal tw=80 fo=cq wm=0
+
+" Automatically Jsonlint json files with syntastic
+au BufRead,BufNewFile *.json set filetype=json
