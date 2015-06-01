@@ -127,5 +127,7 @@ au BufNewFile,BufRead *.ejs set filetype=html
 " Automatically wrap at 80 characters for LaTeX
 autocmd BufRead,BufNewFile *.tex setlocal tw=80 fo=cq wm=0
 
+let g:jsx_ext_required = 0 " Allow JSX in normal JS files"
+
 " Automatically Jsonlint json files with syntastic
 au BufRead,BufNewFile *.json set filetype=json
