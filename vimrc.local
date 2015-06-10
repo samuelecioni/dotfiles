@@ -127,6 +127,9 @@ au BufNewFile,BufRead *.ejs set filetype=html
 " Automatically wrap at 80 characters for LaTeX
 autocmd BufRead,BufNewFile *.tex setlocal tw=80 fo=cq wm=0
 
+" YAML frontmatter in markdown files (jekyll, middleman)
+let g:vim_markdown_frontmatter=1
+
 let g:jsx_ext_required = 0 " Allow JSX in normal JS files"
 
 " Automatically Jsonlint json files with syntastic
