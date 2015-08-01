@@ -2,7 +2,7 @@
 set -sg escape-time 0
 
 # Status Bar
-set -g status-bg colour234
+set -g status-bg black
 set -g status-fg '#707070'
 set -g status-justify centre
 
