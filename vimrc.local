@@ -40,8 +40,9 @@ colorscheme molokai
 highlight ColorColumn ctermbg=235 guibg=#2c2d27
 let &colorcolumn="81,".join(range(81,999),",")
 
-" JSHint with syntastic on file open
-let g:syntastic_javascript_checkers = ['jshint']
+" ESLint with syntastic on file open
+" let g:syntastic_javascript_checkers = ['jshint']
+let g:syntastic_javascript_checkers = ['eslint']
 let g:syntastic_check_on_open = 1
 
 " Airline configuration
