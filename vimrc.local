@@ -151,9 +151,11 @@ au BufRead,BufNewFile *.json set filetype=json
 
 " keybindings for FZF
 let g:fzf_nvim_statusline = 0 " disable statusline overwriting
-nnoremap <silent> <leader><space> :Files<CR>
+"nnoremap <silent> <leader><space> :Files<CR>
+noremap <C-p> :<C-u>Files<CR>
+noremap <C-b> :<C-u>Buffers<CR>
 
-nnoremap <silent> <leader>a :Buffers<CR>
+"nnoremap <silent> <leader>a :Buffers<CR>
 nnoremap <silent> <leader>; :BLines<CR>
 nnoremap <silent> <leader>. :Lines<CR>
 nnoremap <silent> <leader>o :BTags<CR>
