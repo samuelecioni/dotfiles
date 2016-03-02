@@ -135,3 +135,21 @@ let g:jsx_ext_required = 0 " Allow JSX in normal JS files"
 
 " Automatically Jsonlint json files with syntastic
 au BufRead,BufNewFile *.json set filetype=json
+
+" keybindings for FZF
+nnoremap <silent> <leader><space> :Files<CR>
+
+nnoremap <silent> <leader>a :Buffers<CR>
+nnoremap <silent> <leader>; :BLines<CR>
+nnoremap <silent> <leader>. :Lines<CR>
+nnoremap <silent> <leader>o :BTags<CR>
+nnoremap <silent> <leader>O :Tags<CR>
+nnoremap <silent> <leader>? :History<CR>
+nnoremap <silent> <leader>/ :execute 'Ag ' . input('Ag/')<CR>
+nnoremap <silent> K :call SearchWordWithAg()<CR>
+vnoremap <silent> K :call SearchVisualSelectionWithAg()<CR>
+nnoremap <silent> <leader>gl :Commits<CR>
+nnoremap <silent> <leader>ga :BCommits<CR>
+
+imap <C-x><C-f> <plug>(fzf-complete-file-ag)
+imap <C-x><C-l> <plug>(fzf-complete-line)
