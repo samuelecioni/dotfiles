@@ -41,9 +41,22 @@ highlight ColorColumn ctermbg=235 guibg=#2c2d27
 let &colorcolumn="81,".join(range(81,999),",")
 
 " ESLint with syntastic on file open
-" let g:syntastic_javascript_checkers = ['jshint']
-let g:syntastic_javascript_checkers = ['eslint']
-let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_open         = 1
+let g:syntastic_enable_signs          = 1
+let g:syntastic_enable_highlighting   = 1
+let g:syntastic_cpp_check_header      = 1
+let g:syntastic_enable_balloons       = 1
+let g:syntastic_echo_current_error    = 1
+let g:syntastic_check_on_wq           = 0
+let g:syntastic_error_symbol          = '✘'
+let g:syntastic_warning_symbol        = '!'
+let g:syntastic_style_error_symbol    = ':('
+let g:syntastic_style_warning_symbol  = ':('
+let g:syntastic_vim_checkers          = ['vint']
+let g:syntastic_elixir_checkers       = ['elixir']
+let g:syntastic_python_checkers       = ['flake8']
+let g:syntastic_javascript_checkers   = ['eslint']
+let g:syntastic_enable_elixir_checker = 0
 
 " Airline configuration
 " let g:airline_powerline_fonts = 1
@@ -137,6 +150,7 @@ let g:jsx_ext_required = 0 " Allow JSX in normal JS files"
 au BufRead,BufNewFile *.json set filetype=json
 
 " keybindings for FZF
+let g:fzf_nvim_statusline = 0 " disable statusline overwriting
 nnoremap <silent> <leader><space> :Files<CR>
 
 nnoremap <silent> <leader>a :Buffers<CR>
@@ -153,3 +167,54 @@ nnoremap <silent> <leader>ga :BCommits<CR>
 
 imap <C-x><C-f> <plug>(fzf-complete-file-ag)
 imap <C-x><C-l> <plug>(fzf-complete-line)
+
+function! SearchWordWithAg()
+  execute 'Ag' expand('<cword>')
+endfunction
+
+function! SearchVisualSelectionWithAg() range
+  let old_reg = getreg('"')
+  let old_regtype = getregtype('"')
+  let old_clipboard = &clipboard
+  set clipboard&
+  normal! "gvy
+  let selection = getreg('"')
+  call setreg('"', old_reg, old_regtype)
+  let &clipboard = old_clipboard
+  execute 'Ag' selection
+endfunction
+
+" delimitMate config
+let delimitMate_expand_cr = 2
+let delimitMate_expand_space = 1 " {|} => { | }
+
+let g:fugitive_git_executable = 'LANG=en_US.UTF-8 git'
+
+nnoremap <silent> <leader>gs :Gstatus<CR>
+nnoremap <silent> <leader>gd :Gdiff<CR>
+nnoremap <silent> <leader>gc :Gcommit<CR>
+nnoremap <silent> <leader>gb :Gblame<CR>
+nnoremap <silent> <leader>ge :Gedit<CR>
+nnoremap <silent> <leader>gE :Gedit<space>
+nnoremap <silent> <leader>gr :Gread<CR>
+nnoremap <silent> <leader>gR :Gread<space>
+nnoremap <silent> <leader>gw :Gwrite<CR>
+nnoremap <silent> <leader>gW :Gwrite!<CR>
+nnoremap <silent> <leader>gq :Gwq<CR>
+nnoremap <silent> <leader>gQ :Gwq!<CR>
+
+function! ReviewLastCommit()
+  if exists('b:git_dir')
+    Gtabedit HEAD^{}
+    nnoremap <buffer> <silent> q :<C-U>bdelete<CR>
+  else
+    echo 'No git a git repository:' expand('%:p')
+  endif
+endfunction
+nnoremap <silent> <leader>g` :call ReviewLastCommit()<CR>
+
+augroup fugitiveSettings
+  autocmd!
+  autocmd FileType gitcommit setlocal nolist
+  autocmd BufReadPost fugitive://* setlocal bufhidden=delete
+augroup END
