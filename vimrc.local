@@ -55,8 +55,12 @@ let g:syntastic_style_warning_symbol  = ':('
 let g:syntastic_vim_checkers          = ['vint']
 let g:syntastic_elixir_checkers       = ['elixir']
 let g:syntastic_python_checkers       = ['flake8']
-let g:syntastic_javascript_checkers   = ['eslint']
 let g:syntastic_enable_elixir_checker = 0
+
+let g:syntastic_javascript_eslint_generic = 1
+let g:syntastic_javascript_eslint_exec = 'xo'
+let g:syntastic_javascript_eslint_args = '--reporter=compact'
+let g:syntastic_javascript_checkers = ['eslint']
 
 " Airline configuration
 " let g:airline_powerline_fonts = 1
@@ -220,3 +224,10 @@ augroup fugitiveSettings
   autocmd FileType gitcommit setlocal nolist
   autocmd BufReadPost fugitive://* setlocal bufhidden=delete
 augroup END
+
+set noexpandtab
+set copyindent
+set preserveindent
+set softtabstop=0
+set shiftwidth=1
+set tabstop=2
