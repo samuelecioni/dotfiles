@@ -50,3 +50,16 @@ bind-key a send-prefix
 # connected to the *session*, constrain window size to the maximum size of any 
 # client connected to *that window*. Much more reasonable.
 setw -g aggressive-resize on
+
+# -------------------------------------------------------------------
+# fzf integration
+# -------------------------------------------------------------------
+# Tmux completion
+bind-key -n 'M-t' run "tmux split-window -p 40 'tmux send-keys -t #{pane_id} \"$(tmuxwords.rb --all --scroll 1000 --min 5 | fzf --multi | paste -sd\\  -)\"'"
+
+# fzf-locate (all)
+bind-key -n 'M-`' run "tmux split-window -p 40 'tmux send-keys -t #{pane_id} \"$(locate / | fzf -m | paste -sd\\  -)\"'"
+
+
+# select-pane (@george-b)
+bind-key 0 run "tmux split-window -p 40 'zsh -ci ftpane'"
