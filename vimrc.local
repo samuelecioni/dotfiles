@@ -26,6 +26,8 @@ set background=dark
 "let g:molokai_original = 1
 "colorscheme molokai
 colorscheme apprentice
+" better matching brakets colors for apprentice
+hi MatchParen cterm=bold ctermbg=white ctermfg=black
 
 " if has("gui_macvim")
 "  set guifont=Inconsolata\ for\ Powerline:h13
