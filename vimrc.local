@@ -36,7 +36,9 @@ hi MatchParen cterm=bold ctermbg=white ctermfg=black
 " Indentation rules
 " set smartindent
 " set softtabstop=2
-" set autoindent
+set autoindent
+"set shiftwidth=2
+"set tabstop=2
 " set copyindent
 
 " highlight all the column after the 80th
@@ -232,8 +234,8 @@ augroup fugitiveSettings
 augroup END
 
 set noexpandtab
-set copyindent
+"set copyindent
 set preserveindent
 set softtabstop=0
-set shiftwidth=1
+set shiftwidth=2
 set tabstop=2
