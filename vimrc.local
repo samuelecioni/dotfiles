@@ -49,20 +49,20 @@ let &colorcolumn=join(range(81,999),",")
 "let &colorcolumn="81,".join(range(81,999),",")
 
 " ESLint with syntastic on file open
-let g:syntastic_check_on_open         = 1
-let g:syntastic_enable_signs          = 1
-let g:syntastic_enable_highlighting   = 1
-let g:syntastic_cpp_check_header      = 1
-let g:syntastic_enable_balloons       = 1
-let g:syntastic_echo_current_error    = 1
-let g:syntastic_check_on_wq           = 0
-let g:syntastic_error_symbol          = '✘'
-let g:syntastic_warning_symbol        = '!'
-let g:syntastic_style_error_symbol    = ':('
-let g:syntastic_style_warning_symbol  = ':('
-let g:syntastic_vim_checkers          = ['vint']
-let g:syntastic_elixir_checkers       = ['elixir']
-let g:syntastic_python_checkers       = ['flake8']
+let g:syntastic_check_on_open					= 1
+let g:syntastic_enable_signs					= 1
+let g:syntastic_enable_highlighting		= 1
+let g:syntastic_cpp_check_header			= 1
+let g:syntastic_enable_balloons				= 1
+let g:syntastic_echo_current_error		= 1
+let g:syntastic_check_on_wq						= 0
+let g:syntastic_error_symbol					= '✘'
+let g:syntastic_warning_symbol				= '!'
+let g:syntastic_style_error_symbol		= ':('
+let g:syntastic_style_warning_symbol	= ':('
+let g:syntastic_vim_checkers					= ['vint']
+let g:syntastic_elixir_checkers				= ['elixir']
+let g:syntastic_python_checkers				= ['flake8']
 let g:syntastic_enable_elixir_checker = 0
 
 let g:syntastic_javascript_eslint_generic = 1
@@ -82,64 +82,64 @@ let g:syntastic_javascript_checkers = ['eslint']
 "let g:indentLine_color_term = 235
 
 let g:lightline = {
-      \ 'colorscheme': 'wombat',
-      \ 'mode_map': { 'c': 'NORMAL' },
-      \ 'active': {
-      \   'left': [ [ 'mode', 'paste' ], [ 'fugitive', 'filename' ] ]
-      \ },
-      \ 'component_function': {
-      \   'modified': 'MyModified',
-      \   'readonly': 'MyReadonly',
-      \   'fugitive': 'MyFugitive',
-      \   'filename': 'MyFilename',
-      \   'fileformat': 'MyFileformat',
-      \   'filetype': 'MyFiletype',
-      \   'fileencoding': 'MyFileencoding',
-      \   'mode': 'MyMode',
-      \ },
-      \ 'separator': { 'left': '', 'right': '' },
-      \ 'subseparator': { 'left': '', 'right': '' }
-      \ }
+			\ 'colorscheme': 'wombat',
+			\ 'mode_map': { 'c': 'NORMAL' },
+			\ 'active': {
+			\		'left': [ [ 'mode', 'paste' ], [ 'fugitive', 'filename' ] ]
+			\ },
+			\ 'component_function': {
+			\		'modified': 'MyModified',
+			\		'readonly': 'MyReadonly',
+			\		'fugitive': 'MyFugitive',
+			\		'filename': 'MyFilename',
+			\		'fileformat': 'MyFileformat',
+			\		'filetype': 'MyFiletype',
+			\		'fileencoding': 'MyFileencoding',
+			\		'mode': 'MyMode',
+			\ },
+			\ 'separator': { 'left': '', 'right': '' },
+			\ 'subseparator': { 'left': '', 'right': '' }
+			\ }
 
 function! MyModified()
-  return &ft =~ 'help\|vimfiler\|gundo' ? '' : &modified ? '+' : &modifiable ? '' : '-'
+	return &ft =~ 'help\|vimfiler\|gundo' ? '' : &modified ? '+' : &modifiable ? '' : '-'
 endfunction
 
 function! MyReadonly()
-  return &ft !~? 'help\|vimfiler\|gundo' && &readonly ? '' : ''
+	return &ft !~? 'help\|vimfiler\|gundo' && &readonly ? '' : ''
 endfunction
 
 function! MyFilename()
-  return ('' != MyReadonly() ? MyReadonly() . ' ' : '') .
-        \ (&ft == 'vimfiler' ? vimfiler#get_status_string() : 
-        \  &ft == 'unite' ? unite#get_status_string() : 
-        \  &ft == 'vimshell' ? vimshell#get_status_string() :
-        \ '' != expand('%:t') ? expand('%:t') : '[No Name]') .
-        \ ('' != MyModified() ? ' ' . MyModified() : '')
+	return ('' != MyReadonly() ? MyReadonly() . ' ' : '') .
+				\ (&ft == 'vimfiler' ? vimfiler#get_status_string() : 
+				\  &ft == 'unite' ? unite#get_status_string() : 
+				\  &ft == 'vimshell' ? vimshell#get_status_string() :
+				\ '' != expand('%:t') ? expand('%:t') : '[No Name]') .
+				\ ('' != MyModified() ? ' ' . MyModified() : '')
 endfunction
 
 function! MyFugitive()
-  if &ft !~? 'vimfiler\|gundo' && exists("*fugitive#head")
-    let _ = fugitive#head()
-    return strlen(_) ? ' '._ : ''
-  endif
-  return ''
+	if &ft !~? 'vimfiler\|gundo' && exists("*fugitive#head")
+		let _ = fugitive#head()
+		return strlen(_) ? ' '._ : ''
+	endif
+	return ''
 endfunction
 
 function! MyFileformat()
-  return winwidth(0) > 70 ? &fileformat : ''
+	return winwidth(0) > 70 ? &fileformat : ''
 endfunction
 
 function! MyFiletype()
-  return winwidth(0) > 70 ? (strlen(&filetype) ? &filetype : 'no ft') : ''
+	return winwidth(0) > 70 ? (strlen(&filetype) ? &filetype : 'no ft') : ''
 endfunction
 
 function! MyFileencoding()
-  return winwidth(0) > 70 ? (strlen(&fenc) ? &fenc : &enc) : ''
+	return winwidth(0) > 70 ? (strlen(&fenc) ? &fenc : &enc) : ''
 endfunction
 
 function! MyMode()
-  return winwidth(0) > 60 ? lightline#mode() : ''
+	return winwidth(0) > 60 ? lightline#mode() : ''
 endfunction
 
 let g:indent_guides_enable_on_vim_startup = 1
@@ -183,19 +183,19 @@ imap <C-x><C-f> <plug>(fzf-complete-file-ag)
 imap <C-x><C-l> <plug>(fzf-complete-line)
 
 function! SearchWordWithAg()
-  execute 'Ag' expand('<cword>')
+	execute 'Ag' expand('<cword>')
 endfunction
 
 function! SearchVisualSelectionWithAg() range
-  let old_reg = getreg('"')
-  let old_regtype = getregtype('"')
-  let old_clipboard = &clipboard
-  set clipboard&
-  normal! "gvy
-  let selection = getreg('"')
-  call setreg('"', old_reg, old_regtype)
-  let &clipboard = old_clipboard
-  execute 'Ag' selection
+	let old_reg = getreg('"')
+	let old_regtype = getregtype('"')
+	let old_clipboard = &clipboard
+	set clipboard&
+	normal! "gvy
+	let selection = getreg('"')
+	call setreg('"', old_reg, old_regtype)
+	let &clipboard = old_clipboard
+	execute 'Ag' selection
 endfunction
 
 " delimitMate config
@@ -218,19 +218,19 @@ nnoremap <silent> <leader>gq :Gwq<CR>
 nnoremap <silent> <leader>gQ :Gwq!<CR>
 
 function! ReviewLastCommit()
-  if exists('b:git_dir')
-    Gtabedit HEAD^{}
-    nnoremap <buffer> <silent> q :<C-U>bdelete<CR>
-  else
-    echo 'No git a git repository:' expand('%:p')
-  endif
+	if exists('b:git_dir')
+		Gtabedit HEAD^{}
+		nnoremap <buffer> <silent> q :<C-U>bdelete<CR>
+	else
+		echo 'No git a git repository:' expand('%:p')
+	endif
 endfunction
 nnoremap <silent> <leader>g` :call ReviewLastCommit()<CR>
 
 augroup fugitiveSettings
-  autocmd!
-  autocmd FileType gitcommit setlocal nolist
-  autocmd BufReadPost fugitive://* setlocal bufhidden=delete
+	autocmd!
+	autocmd FileType gitcommit setlocal nolist
+	autocmd BufReadPost fugitive://* setlocal bufhidden=delete
 augroup END
 
 set noexpandtab
@@ -239,3 +239,8 @@ set preserveindent
 set softtabstop=0
 set shiftwidth=2
 set tabstop=2
+
+"Invisible character colors 
+"set list listchars=tab:→\
+"set list listchars=eol:↩
+"set list listchars=tab:▸·
