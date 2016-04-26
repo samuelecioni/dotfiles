@@ -56,7 +56,9 @@ let g:syntastic_cpp_check_header			= 1
 let g:syntastic_enable_balloons				= 1
 let g:syntastic_echo_current_error		= 1
 let g:syntastic_check_on_wq						= 0
-let g:syntastic_error_symbol					= '✘'
+highlight SyntasticErrorSign ctermfg=red ctermbg=none
+highlight SyntasticWarningSign ctermfg=yellow ctermbg=none
+"let g:syntastic_error_symbol					= '✘'
 let g:syntastic_warning_symbol				= '!'
 let g:syntastic_style_error_symbol		= ':('
 let g:syntastic_style_warning_symbol	= ':('
@@ -143,9 +145,9 @@ function! MyMode()
 endfunction
 
 "let g:indent_guides_enable_on_vim_startup = 1
-let g:indent_guides_auto_colors = 0
-autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd ctermbg=234
-autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=235
+"let g:indent_guides_auto_colors = 0
+"autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd ctermbg=234
+"autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=235
 
 "au FileType javascript call JavaScriptFold()
 au BufNewFile,BufRead *.ejs set filetype=html
