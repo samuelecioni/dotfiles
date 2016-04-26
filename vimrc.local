@@ -56,8 +56,8 @@ let g:syntastic_cpp_check_header			= 1
 let g:syntastic_enable_balloons				= 1
 let g:syntastic_echo_current_error		= 1
 let g:syntastic_check_on_wq						= 0
-highlight SyntasticErrorSign ctermfg=red ctermbg=none
-highlight SyntasticWarningSign ctermfg=yellow ctermbg=none
+highlight SyntasticErrorSign ctermfg=red ctermbg=233
+highlight SyntasticWarningSign ctermfg=yellow ctermbg=233
 "let g:syntastic_error_symbol					= '✘'
 let g:syntastic_warning_symbol				= '!'
 let g:syntastic_style_error_symbol		= ':('
@@ -247,3 +247,9 @@ set tabstop=2
 "set list listchars=eol:↩
 "set list listchars=tab:▸·
 set list lcs=tab:\¦\ 
+
+hi SignColumn ctermbg=233
+highlight GitGutterAdd ctermbg=233
+highlight GitGutterChange ctermbg=233
+highlight GitGutterDelete ctermbg=233
+highlight GitGutterChangeDelete ctermbg=233
