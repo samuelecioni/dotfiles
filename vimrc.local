@@ -85,8 +85,8 @@ highlight SyntasticWarningSign ctermfg=yellow ctermbg=233
 
 "let g:indentLine_color_term = 235
 
-if filereadable(expand("vimrc.lightline"))
-	source vimrc.lightline
+if filereadable(expand("~/.vimrc.lightline"))
+	source ~/.vimrc.lightline
 endif
 
 "let g:indent_guides_enable_on_vim_startup = 1
