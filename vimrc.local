@@ -19,6 +19,9 @@ set showmatch
 " How many tenths of a second to blink when matching brackets
 set mat=2
 
+" Use OS X clipboard
+set clipboard=unnamed
+
 " Colorscheme settings
 let g:rehash256 = 1
 set t_Co=256
