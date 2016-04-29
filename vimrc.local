@@ -29,7 +29,7 @@ set background=dark
 "colorscheme molokai
 colorscheme apprentice
 " better matching brackets colors for apprentice
-hi MatchParen cterm=bold ctermbg=white ctermfg=black
+hi MatchParen cterm=bold ctermbg=DarkBlue ctermfg=none
 
 " if has("gui_macvim")
 "  set guifont=Inconsolata\ for\ Powerline:h13
