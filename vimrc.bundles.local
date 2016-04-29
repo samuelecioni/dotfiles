@@ -9,7 +9,7 @@ Plug 'othree/javascript-libraries-syntax.vim'
 Plug 'briancollins/vim-jst'
 Plug 'jelera/vim-javascript-syntax'
 Plug 'justinmk/vim-dirvish'
-Plug 'jeetsukumaran/vim-filebeagle'
+"Plug 'jeetsukumaran/vim-filebeagle'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'godlygeek/tabular'

@@ -110,6 +110,15 @@ let g:jsx_ext_required = 0 " Allow JSX in normal JS files"
 " Automatically Jsonlint json files with syntastic
 au BufRead,BufNewFile *.json set filetype=json
 
+" Settings for Dirvish
+augroup dirvishSettings
+	autocmd!
+" enable :Gstatus and fugitive stuff
+	autocmd FileType dirvish call fugitive#detect(@%)
+" sort: first folders
+	autocmd FileType dirvish sort r /[^\/]$/
+augroup END
+
 " keybindings for FZF
 let g:fzf_nvim_statusline = 0 " disable statusline overwriting
 "nnoremap <silent> <leader><space> :Files<CR>
