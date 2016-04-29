@@ -28,7 +28,7 @@ set background=dark
 "let g:molokai_original = 1
 "colorscheme molokai
 colorscheme apprentice
-" better matching brakets colors for apprentice
+" better matching brackets colors for apprentice
 hi MatchParen cterm=bold ctermbg=white ctermfg=black
 
 " if has("gui_macvim")
@@ -204,11 +204,15 @@ set tabstop=2
 "set list listchars=tab:▸·
 set list lcs=tab:\¦\ 
 
+" Color options for gitgutter symbols and SignColumn
 hi SignColumn ctermbg=233
 highlight GitGutterAdd ctermbg=233
 highlight GitGutterChange ctermbg=233
 highlight GitGutterDelete ctermbg=233
 highlight GitGutterChangeDelete ctermbg=233
+
+" Color option for brackets in pangloss js (to use with apprentice colorscheme)
+hi Noise ctermfg=LightYellow
 
 " ----------------------------------------------------------------------------
 " <Leader>c Close quickfix/location window
