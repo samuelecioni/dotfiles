@@ -60,34 +60,34 @@ endfunction
 autocmd! ColorScheme apprentice call s:patch_apprentice_colors()
 
 " highlight all the column after the 80th
-"highlight ColorColumn ctermbg=235 guibg=#2c2d27
+" highlight ColorColumn ctermbg=235 guibg=#2c2d27
 highlight ColorColumn ctermbg=235 guibg=#2c2d27
 let &colorcolumn=join(range(81,999),",")
 " old way for vim pre 7.3
 "let &colorcolumn="81,".join(range(81,999),",")
 
 " ESLint with syntastic on file open
-let g:syntastic_check_on_open             = 1
-let g:syntastic_always_populate_loc_list  = 1
-let g:syntastic_enable_signs              = 1
-let g:syntastic_enable_highlighting       = 1
-let g:syntastic_cpp_check_header          = 1
-let g:syntastic_enable_balloons           = 1
-let g:syntastic_echo_current_error        = 1
-let g:syntastic_check_on_wq               = 0
-"let g:syntastic_error_symbol             = '✘'
-let g:syntastic_warning_symbol            = '!'
-let g:syntastic_style_error_symbol        = ':('
-let g:syntastic_style_warning_symbol      = ':('
-let g:syntastic_vim_checkers              = ['vint']
-let g:syntastic_elixir_checkers           = ['elixir']
-let g:syntastic_python_checkers           = ['flake8']
-let g:syntastic_enable_elixir_checker     = 0
+let g:syntastic_check_on_open							= 1
+let g:syntastic_always_populate_loc_list	= 1
+let g:syntastic_enable_signs							= 1
+let g:syntastic_enable_highlighting				= 1
+let g:syntastic_cpp_check_header					= 1
+let g:syntastic_enable_balloons						= 1
+let g:syntastic_echo_current_error				= 1
+let g:syntastic_check_on_wq								= 0
+"let g:syntastic_error_symbol							= '✘'
+let g:syntastic_warning_symbol						= '!'
+let g:syntastic_style_error_symbol				= ':('
+let g:syntastic_style_warning_symbol			= ':('
+let g:syntastic_vim_checkers							= ['vint']
+let g:syntastic_elixir_checkers						= ['elixir']
+let g:syntastic_python_checkers						= ['flake8']
+let g:syntastic_enable_elixir_checker			= 0
 
 let g:syntastic_javascript_eslint_generic = 1
-let g:syntastic_javascript_eslint_exec    = 'xo'
-let g:syntastic_javascript_eslint_args    = '--reporter=compact'
-let g:syntastic_javascript_checkers       = ['eslint']
+let g:syntastic_javascript_eslint_exec		= 'xo'
+let g:syntastic_javascript_eslint_args		= '--reporter=compact'
+let g:syntastic_javascript_checkers				= ['eslint']
 
 highlight SyntasticErrorSign ctermfg=red ctermbg=233
 highlight SyntasticWarningSign ctermfg=yellow ctermbg=233
@@ -103,7 +103,7 @@ highlight SyntasticWarningSign ctermfg=yellow ctermbg=233
 
 "let g:indentLine_color_term = 235
 
-if filereadable(expand("~/.vimrc.lightline"))
+if filereadable(expand('~/.vimrc.lightline'))
 	source ~/.vimrc.lightline
 endif
 
@@ -238,32 +238,32 @@ nnoremap <leader>c :cclose<bar>lclose<cr>
 " ----------------------------------------------------------------------------
 " vim-fugitive
 " ----------------------------------------------------------------------------
-nmap     <Leader>g :Gstatus<CR>gg<c-n>
+nmap		 <Leader>g :Gstatus<CR>gg<c-n>
 nnoremap <Leader>d :Gdiff<CR>
 
 " vimtex configuration for skim pdf viewer
 let g:vimtex_view_general_viewer
-      \ = '/Applications/Skim.app/Contents/SharedSupport/displayline'
+			\ = '/Applications/Skim.app/Contents/SharedSupport/displayline'
 let g:vimtex_view_general_options = '-r @line @pdf @tex'
 
 " This adds a callback hook that updates Skim after compilation
 let g:vimtex_latexmk_callback_hooks = ['UpdateSkim']
 function! UpdateSkim(status)
-  if !a:status | return | endif
+	if !a:status | return | endif
 
-  let l:out = b:vimtex.out()
-  let l:tex = expand('%:p')
-  let l:cmd = [g:vimtex_view_general_viewer, '-r']
-  if !empty(system('pgrep Skim'))
-    call extend(l:cmd, ['-g'])
-  endif
-  if has('nvim')
-    call jobstart(l:cmd + [line('.'), l:out, l:tex])
-  elseif has('job')
-    call job_start(l:cmd + [line('.'), l:out, l:tex])
-  else
-    call system(join(l:cmd + [line('.'), shellescape(l:out), shellescape(l:tex)], ' '))
-  endif
+	let l:out = b:vimtex.out()
+	let l:tex = expand('%:p')
+	let l:cmd = [g:vimtex_view_general_viewer, '-r']
+	if !empty(system('pgrep Skim'))
+		call extend(l:cmd, ['-g'])
+	endif
+	if has('nvim')
+		call jobstart(l:cmd + [line('.'), l:out, l:tex])
+	elseif has('job')
+		call job_start(l:cmd + [line('.'), l:out, l:tex])
+	else
+		call system(join(l:cmd + [line('.'), shellescape(l:out), shellescape(l:tex)], ' '))
+	endif
 endfunction
 
 " limelight configuration
