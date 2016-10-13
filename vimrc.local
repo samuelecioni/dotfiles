@@ -22,8 +22,8 @@ set mat=2
 set clipboard=unnamed
 
 " Colorscheme settings
-let g:rehash256 = 1
-set t_Co=256
+"let g:rehash256 = 1
+"set t_Co=256
 set background=dark
 "let g:molokai_original = 1
 "colorscheme molokai
@@ -42,6 +42,22 @@ set autoindent
 "set shiftwidth=2
 "set tabstop=2
 " set copyindent
+"
+" Fix Goyo custom color when deactivete it
+function! s:patch_apprentice_colors()
+	hi MatchParen cterm=bold ctermbg=DarkBlue ctermfg=none
+	hi SignColumn ctermbg=233
+	highlight GitGutterAdd ctermbg=233
+	highlight GitGutterChange ctermbg=233
+	highlight GitGutterDelete ctermbg=233
+	highlight GitGutterChangeDelete ctermbg=233
+	hi Noise ctermfg=LightYellow
+	highlight ColorColumn ctermbg=235 guibg=#2c2d27
+	highlight SyntasticErrorSign ctermfg=red ctermbg=233
+	highlight SyntasticWarningSign ctermfg=yellow ctermbg=233
+endfunction
+" Call fix to goyo custom color when switching back to normal mode
+autocmd! ColorScheme apprentice call s:patch_apprentice_colors()
 
 " highlight all the column after the 80th
 "highlight ColorColumn ctermbg=235 guibg=#2c2d27
@@ -226,7 +242,6 @@ nmap     <Leader>g :Gstatus<CR>gg<c-n>
 nnoremap <Leader>d :Gdiff<CR>
 
 " vimtex configuration for skim pdf viewer
-
 let g:vimtex_view_general_viewer
       \ = '/Applications/Skim.app/Contents/SharedSupport/displayline'
 let g:vimtex_view_general_options = '-r @line @pdf @tex'
@@ -250,3 +265,7 @@ function! UpdateSkim(status)
     call system(join(l:cmd + [line('.'), shellescape(l:out), shellescape(l:tex)], ' '))
   endif
 endfunction
+
+" limelight configuration
+let g:limelight_paragraph_span = 1
+let g:limelight_priority = -1
