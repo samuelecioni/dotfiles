@@ -34,7 +34,7 @@ hi MatchParen cterm=bold ctermbg=DarkBlue ctermfg=none
 " highlight all the column after the 80th
 " highlight ColorColumn ctermbg=235 guibg=#2c2d27
 highlight ColorColumn ctermbg=235 guibg=#2c2d27
-let &colorcolumn=join(range(81,999),",")
+let &colorcolumn=join(range(81,999),',')
 
 " Fix Goyo custom color when deactivete it
 function! s:patch_apprentice_colors()
