@@ -29,7 +29,7 @@ Plug 'mattn/gist-vim'
 Plug 'TeX-PDF'
 Plug 'plasticboy/vim-markdown'
 Plug 'nathanaelkane/vim-indent-guides'
-Plug 'romainl/Apprentice'
+Plug 'romainl/Apprentice', { 'branch': 'fancylines-and-neovim' }
 Plug 'tpope/vim-liquid'
 Plug 'cakebaker/scss-syntax.vim'
 Plug 'vim-scripts/ctags.vim'
