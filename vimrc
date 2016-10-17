@@ -1,5 +1,5 @@
 " Leader
-let mapleader = " "
+let mapleader = ' '
 
 set backspace=2   " Backspace deletes like most programs in insert mode
 set nobackup
@@ -14,11 +14,11 @@ set autowrite     " Automatically :write before running commands
 
 " Switch syntax highlighting on, when the terminal has colors
 " Also switch on highlighting the last used search pattern.
-if (&t_Co > 2 || has("gui_running")) && !exists("syntax_on")
+if (&t_Co > 2 || has('gui_running')) && !exists('syntax_on')
   syntax on
 endif
 
-if filereadable(expand("~/.vimrc.bundles"))
+if filereadable(expand('~/.vimrc.bundles'))
   source ~/.vimrc.bundles
 endif
 
@@ -73,7 +73,7 @@ if executable('ag')
   " ag is fast enough that CtrlP doesn't need to cache
   let g:ctrlp_use_caching = 0
 
-  if !exists(":Ag")
+  if !exists(':Ag')
     command -nargs=+ -complete=file -bar Ag silent! grep! <args>|cwindow|redraw!
     nnoremap \ :Ag<SPACE>
   endif
@@ -138,7 +138,7 @@ nnoremap <C-l> <C-w>l
 let g:syntastic_check_on_open=1
 let g:syntastic_html_tidy_ignore_errors=[" proprietary attribute \"ng-"]
 let g:syntastic_eruby_ruby_quiet_messages =
-    \ {"regex": "possibly useless use of a variable in void context"}
+    \ {'regex': 'possibly useless use of a variable in void context'}
 
 " Set spellfile to location that is guaranteed to exist, can be symlinked to
 " Dropbox or kept in Git and managed outside of thoughtbot/dotfiles using rcm.
@@ -151,6 +151,6 @@ set complete+=kspell
 set diffopt+=vertical
 
 " Local config
-if filereadable($HOME . "/.vimrc.local")
+if filereadable($HOME . '/.vimrc.local')
   source ~/.vimrc.local
 endif
