@@ -50,7 +50,9 @@ function! s:patch_apprentice_colors()
 	highlight SyntasticWarningSign ctermfg=yellow ctermbg=233
 endfunction
 " Call fix to goyo custom color when switching back to normal mode
-autocmd! ColorScheme apprentice call s:patch_apprentice_colors()
+augroup patchAprenticeColors
+	autocmd! ColorScheme apprentice call s:patch_apprentice_colors()
+augroup END
 
 " ESLint with syntastic on file open
 let g:syntastic_check_on_open							= 1
