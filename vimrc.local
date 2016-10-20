@@ -241,3 +241,8 @@ endfunction
 " limelight configuration
 let g:limelight_paragraph_span = 1
 let g:limelight_priority = -1
+
+" Start interactive EasyAlign in visual mode (e.g. vipga)
+xmap ga <Plug>(EasyAlign)
+" Start interactive EasyAlign for a motion/text object (e.g. gaip)
+nmap ga <Plug>(EasyAlign)
