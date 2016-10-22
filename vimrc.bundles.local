@@ -14,7 +14,7 @@ Plug 'justinmk/vim-dirvish'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 "Plug 'godlygeek/tabular'
-Plug 'junegunn/vim-easy-align'
+Plug 'junegunn/vim-easy-align', { 'on': ['<Plug>(EasyAlign)', 'EasyAlign'] }
 "Plug 'jpo/vim-railscasts-theme'
 Plug 'chriskempson/base16-vim'
 Plug 'vim-scripts/taglist.vim'
