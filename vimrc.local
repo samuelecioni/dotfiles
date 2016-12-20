@@ -213,7 +213,6 @@ nnoremap <leader>c :cclose<bar>lclose<cr>
 nmap		 <Leader>g :Gstatus<CR>gg<c-n>
 nnoremap <Leader>d :Gdiff<CR>
 
-" vimtex configuration for skim pdf viewer
 let g:vimtex_view_general_viewer
 			\ = '/Applications/Skim.app/Contents/SharedSupport/displayline'
 let g:vimtex_view_general_options = '-r @line @pdf @tex'
