@@ -92,8 +92,7 @@ module.exports = {
 	//	 `@company/project`
 	//	 `project#1.0.1`
 	plugins: [
-		'hyper-phallus',
-		'hyper-autohide-tabs'
+		'hyper-phallus'
 
 	],
 
