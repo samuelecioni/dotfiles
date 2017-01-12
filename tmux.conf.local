@@ -1,6 +1,7 @@
 # workaround for neovim and system clipboard integration
 set -g default-shell $SHELL 
 set -g default-command "reattach-to-user-namespace -l ${SHELL}"
+
 # remove delay after ESC key
 set -sg escape-time 0
 # remove delay after prefix+command
