@@ -12,6 +12,8 @@ module.exports = {
 		// `BEAM` for |, `UNDERLINE` for _, `BLOCK` for █
 		cursorShape: 'BLOCK',
 
+		cursorBlink: false,
+
 		// color of the text
 		foregroundColor: '#fff',
 
