@@ -1,27 +1,72 @@
 [init]
-  templatedir = ~/.git_template
+	templatedir = ~/.git_template
 [push]
-  default = current
+	default = current
 [color]
-  ui = auto
+	ui = auto
 [alias]
-  aa = add --all
-  ap = add --patch
-  branches = for-each-ref --sort=-committerdate --format=\"%(color:blue)%(authordate:relative)\t%(color:red)%(authorname)\t%(color:white)%(color:bold)%(refname:short)\" refs/remotes
-  ca = commit --amend -v
-  ci = commit -v
-  co = checkout
-  st = status
+	aa = add --all
+	ap = add --patch
+	branches = for-each-ref --sort=-committerdate --format=\"%(color:blue)%(authordate:relative)\t%(color:red)%(authorname)\t%(color:white)%(color:bold)%(refname:short)\" refs/remotes
+	ca = commit --amend -v
+	ci = commit -v
+	co = checkout
+	st = status
+	prune = fetch --prune
+	# Because I constantly forget how to do this
+	# https://git-scm.com/docs/git-fetch#git-fetch--p
+
+	undo = reset --soft HEAD^
+	# Not quite as common as an amend, but still common
+	# https://git-scm.com/docs/git-reset#git-reset-emgitresetemltmodegtltcommitgt
+
+	stash-all = stash save --include-untracked
+	# We wanna grab those pesky un-added files!
+	# https://git-scm.com/docs/git-stash
+
+	glog = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'
+	# No need for a GUI - a nice, colorful, graphical
+	# representation
+	# https://git-scm.com/docs/git-log
+	# via
+	# https://medium.com/@payload.dd/thanks-for-the-git-st-i-will-use-this-4da5839a21a4
 [core]
-  excludesfile = ~/.gitignore
-  autocrlf = input
+	excludesfile = ~/.gitignore
+	autocrlf = input
+	editor = nvim
 [merge]
-  ff = only
+	ff = only
+	tool = Kaleidoscope
+	conflictstyle = diff3
+	# Standard diff is two sets of final changes. This introduces the original
+	# text before each side's changes.
+	# https://git-scm.com/docs/git-config#git-config-mergeconflictStyle
+	[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+	[mergetool "sourcetree"]
+	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+	[apply]
+	whitespace = nowarn
+	[credential]
+	helper = osxkeychain
+	[difftool "Kaleidoscope"]
+	cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
+	[diff]
+	tool = Kaleidoscope
+	[difftool]
+	prompt = false
+	[mergetool "Kaleidoscope"]
+	cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
+	trustExitCode = true
+	[mergetool]
+	prompt = false
 [commit]
-  template = ~/.gitmessage
+	template = ~/.gitmessage
 [fetch]
-  prune = true
+	prune = true
 [rebase]
-  autosquash = true
+	autosquash = true
 [include]
-  path = ~/.gitconfig.local
+	path = ~/.gitconfig.local
