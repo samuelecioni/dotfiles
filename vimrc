@@ -2,7 +2,7 @@ set encoding=utf-8
 scriptencoding utf-8
 
 " Leader
-let mapleader = ' '
+let g:mapleader = ' '
 
 set backspace=2   " Backspace deletes like most programs in insert mode
 set nobackup
@@ -26,7 +26,7 @@ if filereadable(expand('~/.vimrc.bundles'))
 endif
 
 " Load matchit.vim, but only if the user hasn't installed a newer version.
-if !exists('g:loaded_matchit') && findfile('plugin/matchit.vim', &rtp) ==# ''
+if !exists('g:loaded_matchit') && findfile('plugin/matchit.vim', &runtimepath) ==# ''
   runtime! macros/matchit.vim
 endif
 
