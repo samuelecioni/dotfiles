@@ -251,10 +251,13 @@ let g:ale_fixers = {'javascript': ['eslint']}
 let g:ale_sign_column_always = 1
 
 " custom errors and warnings messages in statusline
-" let g:ale_statusline_format = ['%#ale_error# ⨉ %d %*', ' %#ale_warning# ⚠ %d %*', '%#ale_info - ok %*']
+"let g:ale_statusline_format = ['%#ale_error# ⨉ %d %*', ' %#ale_warning# ⚠ %d %*', '%#ale_info - ok %*']
+let g:ale_statusline_format = ['E•%d', 'W•%d', '']
 let g:ale_echo_msg_error_str = 'E'
 let g:ale_echo_msg_warning_str = 'W'
 let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
+
+let g:airline#extensions#ale#enabled = 1
 
 " run ALEFix with leader d
 nmap <leader>d <Plug>(ale_fix)
