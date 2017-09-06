@@ -46,8 +46,8 @@ function! s:patch_apprentice_colors()
 	highlight GitGutterChangeDelete ctermbg=233
 	hi Noise ctermfg=LightYellow
 	highlight ColorColumn ctermbg=235 guibg=#2c2d27
-	highlight SyntasticErrorSign ctermfg=red ctermbg=233
-	highlight SyntasticWarningSign ctermfg=yellow ctermbg=233
+	" highlight SyntasticErrorSign ctermfg=red ctermbg=233
+	" highlight SyntasticWarningSign ctermfg=yellow ctermbg=233
 endfunction
 " Call fix to goyo custom color when switching back to normal mode
 augroup patchAprenticeColors
@@ -55,30 +55,30 @@ augroup patchAprenticeColors
 augroup END
 
 " ESLint with syntastic on file open
-let g:syntastic_check_on_open							= 1
-let g:syntastic_always_populate_loc_list	= 1
-let g:syntastic_enable_signs							= 1
-let g:syntastic_enable_highlighting				= 1
-let g:syntastic_cpp_check_header					= 1
-let g:syntastic_enable_balloons						= 1
-let g:syntastic_echo_current_error				= 1
-let g:syntastic_check_on_wq								= 0
-"let g:syntastic_error_symbol							= '✘'
-let g:syntastic_warning_symbol						= '!'
-let g:syntastic_style_error_symbol				= ':('
-let g:syntastic_style_warning_symbol			= ':('
-let g:syntastic_vim_checkers							= ['vint']
-let g:syntastic_elixir_checkers						= ['elixir']
-let g:syntastic_python_checkers						= ['flake8']
-let g:syntastic_enable_elixir_checker			= 0
+" let g:syntastic_check_on_open							= 1
+" let g:syntastic_always_populate_loc_list	= 1
+" let g:syntastic_enable_signs							= 1
+" let g:syntastic_enable_highlighting				= 1
+" let g:syntastic_cpp_check_header					= 1
+" let g:syntastic_enable_balloons						= 1
+" let g:syntastic_echo_current_error				= 1
+" let g:syntastic_check_on_wq								= 0
+" let g:syntastic_error_symbol							= '✘'
+" let g:syntastic_warning_symbol						= '!'
+" let g:syntastic_style_error_symbol				= ':('
+" let g:syntastic_style_warning_symbol			= ':('
+" let g:syntastic_vim_checkers							= ['vint']
+" let g:syntastic_elixir_checkers						= ['elixir']
+" let g:syntastic_python_checkers						= ['flake8']
+" let g:syntastic_enable_elixir_checker			= 0
 
 " let g:syntastic_javascript_eslint_generic = 1
 " let g:syntastic_javascript_eslint_exec		= 'xo'
 " let g:syntastic_javascript_eslint_args		= '--reporter=compact'
-let g:syntastic_javascript_checkers				= ['xo']
+" let g:syntastic_javascript_checkers				= ['xo']
 
-highlight SyntasticErrorSign ctermfg=red ctermbg=233
-highlight SyntasticWarningSign ctermfg=yellow ctermbg=233
+" highlight SyntasticErrorSign ctermfg=red ctermbg=233
+" highlight SyntasticWarningSign ctermfg=yellow ctermbg=233
 
 if filereadable(expand('~/.vimrc.lightline'))
 	source ~/.vimrc.lightline
@@ -96,7 +96,7 @@ let g:vim_markdown_frontmatter=1
 let g:jsx_ext_required = 0 " Allow JSX in normal JS files"
 
 " Automatically Jsonlint json files with syntastic
-au BufRead,BufNewFile *.json set filetype=json
+" au BufRead,BufNewFile *.json set filetype=json
 
 " Settings for Dirvish
 augroup dirvishSettings
@@ -240,6 +240,34 @@ endfunction
 " limelight configuration
 let g:limelight_paragraph_span = 1
 let g:limelight_priority = -1
+
+" set XO and ESLint as ALE linter
+let g:ale_linters = {'javascript': ['xo']}
+
+" set eslint as ALE fixer
+let g:ale_fixers = {'javascript': ['eslint']}
+
+" always show ALE column
+let g:ale_sign_column_always = 1
+
+" custom errors and warnings messages in statusline
+" let g:ale_statusline_format = ['%#ale_error# ⨉ %d %*', ' %#ale_warning# ⚠ %d %*', '%#ale_info - ok %*']
+let g:ale_echo_msg_error_str = 'E'
+let g:ale_echo_msg_warning_str = 'W'
+let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
+
+" run ALEFix with leader d
+nmap <leader>d <Plug>(ale_fix)
+
+" Use a slightly slimmer error pointer
+let g:ale_sign_error = '•'
+hi ALEErrorSign guifg=#DF8C8C ctermfg=red cterm=bold
+let g:ale_sign_warning = '•'
+hi ALEWarningSign guifg=#F2C38F ctermfg=yellow cterm=bold
+
+" Use ALT-k and ALT-j to navigate errors
+nmap <silent> ˚ <Plug>(ale_previous_wrap)
+nmap <silent> ∆ <Plug>(ale_next_wrap)
 
 " Start interactive EasyAlign in visual mode (e.g. vipga)
 xmap ga <Plug>(EasyAlign)
