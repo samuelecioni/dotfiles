@@ -95,7 +95,8 @@ module.exports = {
 	//	 `project#1.0.1`
 	plugins: [
 		'hyper-phallus',
-		'hyper-hide-title'
+		'hyper-hide-title',
+		'hyperlinks'
 	],
 
 	// in development, you can create a directory under
