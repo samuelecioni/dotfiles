@@ -10,7 +10,7 @@ set hlsearch
 " Ignore case of searches
 set ignorecase
 " Show the current mode
-set showmode
+set noshowmode
 " Show the filename in the window titlebar
 set title
 " undo history size
