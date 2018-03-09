@@ -277,3 +277,6 @@ nmap <silent> ∆ <Plug>(ale_next_wrap)
 xmap ga <Plug>(EasyAlign)
 " Start interactive EasyAlign for a motion/text object (e.g. gaip)
 nmap ga <Plug>(EasyAlign)
+
+" turn spell check on on markdown and TeX files
+autocmd BufNewFile,BufRead *.md,*.mkd,*.markdown,*.tex set spell spelllang=it_it,en_us
