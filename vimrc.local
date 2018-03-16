@@ -279,4 +279,4 @@ xmap ga <Plug>(EasyAlign)
 nmap ga <Plug>(EasyAlign)
 
 " turn spell check on on markdown and TeX files
-autocmd BufNewFile,BufRead *.md,*.mkd,*.markdown,*.tex set spell spelllang=it_it,en_us
+autocmd BufNewFile,BufRead *.md,*.mkd,*.markdown,*.tex set spell spelllang=it,en_us
