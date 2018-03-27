@@ -191,7 +191,10 @@ set tabstop=2
 "set list listchars=tab:→\
 "set list listchars=eol:↩
 "set list listchars=tab:▸·
-set list lcs=tab:\¦\ 
+" set list lcs=tab:\¦\ 
+
+" Indent column symbol
+set list lcs=tab:\┊\ 
 
 " Color options for gitgutter symbols and SignColumn
 hi SignColumn ctermbg=233
