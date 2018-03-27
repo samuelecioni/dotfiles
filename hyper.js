@@ -4,7 +4,7 @@ module.exports = {
 		fontSize: 11,
 
 		// font family with optional fallbacks
-		fontFamily: '"DejaVu Sans Mono for Powerline", "DejaVu Sans Mono", Menlo, "Lucida Console", monospace',
+		fontFamily: '"DejaVuSansMono Nerd Font Mono", "DejaVu Sans Mono for Powerline", "DejaVu Sans Mono", Menlo, "Lucida Console", monospace',
 
 		// terminal cursor background color and opacity (hex, rgb, hsl, hsv, hwb or cmyk)
 		cursorColor: 'rgba(248,28,229,0.8)',
@@ -27,7 +27,9 @@ module.exports = {
 		css: '',
 
 		// custom css to embed in the terminal window
-		termCSS: '',
+		// termCSS: '',
+		// temporary fix for glyphs https://github.com/zeit/hyper/issues/464
+		termCSS: 'x-row {line-height: initial} .unicode-node {position: relative}',
 
 		// set to `true` if you're using a Linux set up
 		// that doesn't shows native menus
