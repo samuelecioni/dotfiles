@@ -1,0 +1,80 @@
+scriptencoding utf-8
+let g:lightline = {
+			\ 'colorscheme': 'apprentice',
+			\ 'mode_map': { 'c': 'NORMAL' },
+			\ 'active': {
+			\		'left': [ [ 'mode', 'paste' ], [ 'fugitive', 'filename' ], [ 'ale' ] ]
+			\ },
+			\ 'component_function': {
+			\		'modified': 'MyModified',
+			\		'readonly': 'MyReadonly',
+			\		'fugitive': 'MyFugitive',
+			\		'filename': 'MyFilename',
+			\		'fileformat': 'MyFileformat',
+			\		'filetype': 'MyFiletype',
+			\		'fileencoding': 'MyFileencoding',
+			\		'ale': 'ALEStatus',
+			\		'mode': 'MyMode',
+			\ },
+			\ 'separator': { 'left': '', 'right': '' },
+			\ 'subseparator': { 'left': '', 'right': '' }
+			\ }
+
+function! MyModified()
+	return &filetype =~? 'help\|vimfiler\|gundo' ? '' : &modified ? '+' : &modifiable ? '' : '-'
+endfunction
+
+function! MyReadonly()
+	return &filetype !~? 'help\|vimfiler\|gundo' && &readonly ? '' : ''
+endfunction
+
+function! MyFilename()
+	return ('' !=? MyReadonly() ? MyReadonly() . ' ' : '') .
+				\ (&filetype ==? 'vimfiler' ? vimfiler#get_status_string() : 
+				\  &filetype ==? 'unite' ? unite#get_status_string() : 
+				\  &filetype ==? 'vimshell' ? vimshell#get_status_string() :
+				\ '' !=? expand('%:t') ? expand('%:t') : '[No Name]') .
+				\ ('' !=? MyModified() ? ' ' . MyModified() : '')
+endfunction
+
+function! MyFugitive()
+	if &filetype !~? 'vimfiler\|gundo' && exists('*fugitive#head')
+		let l:_ = fugitive#head()
+		return strlen(l:_) ? ' '.l:_ : ''
+	endif
+	return ''
+endfunction
+
+function! MyFileformat()
+	return winwidth(0) > 70 ? &fileformat : ''
+endfunction
+
+function! MyFiletype()
+	return winwidth(0) > 70 ? (strlen(&filetype) ? &filetype : 'no ft') : ''
+endfunction
+
+function! MyFileencoding()
+	return winwidth(0) > 70 ? (strlen(&fileencoding) ? &fileencoding : &encoding) : ''
+endfunction
+
+function! MyMode()
+	return winwidth(0) > 60 ? lightline#mode() : ''
+endfunction
+
+function! ALEStatus()
+	return ALEGetStatusLine()
+endfunction
+
+let g:lightline.component_expand = {
+			\  'linter_checking': 'lightline#ale#checking',
+			\  'linter_warnings': 'lightline#ale#warnings',
+			\  'linter_errors': 'lightline#ale#errors',
+			\  'linter_ok': 'lightline#ale#ok',
+			\ }
+
+let g:lightline.component_type = {
+			\			'linter_checking': 'left',
+			\			'linter_warnings': 'warning',
+			\			'linter_errors': 'error',
+			\			'linter_ok': 'left',
+			\ }
