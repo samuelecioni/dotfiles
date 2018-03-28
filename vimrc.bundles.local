@@ -1,6 +1,7 @@
 "Plug 'godlygeek/csapprox'
 Plug 'w0rp/ale'
 Plug 'tomasr/molokai'
+Plug 'arcticicestudio/nord-vim'
 Plug 'morhetz/gruvbox'
 Plug 'itchyny/lightline.vim'
 Plug 'maximbaz/lightline-ale'
