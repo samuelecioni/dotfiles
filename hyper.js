@@ -27,9 +27,7 @@ module.exports = {
 		css: '',
 
 		// custom css to embed in the terminal window
-		// termCSS: '',
-		// temporary fix for glyphs https://github.com/zeit/hyper/issues/464
-		termCSS: 'x-row {line-height: initial} .unicode-node {position: relative}',
+		termCSS: '',
 
 		// set to `true` if you're using a Linux set up
 		// that doesn't shows native menus
