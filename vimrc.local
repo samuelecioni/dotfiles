@@ -219,6 +219,8 @@ hi Noise ctermfg=LightYellow
 " ----------------------------------------------------------------------------
 nnoremap <leader>c :cclose<bar>lclose<cr>
 
+let g:vimtex_compiler_progname = 'nvr'
+
 let g:vimtex_view_general_viewer
 			\ = '/Applications/Skim.app/Contents/SharedSupport/displayline'
 let g:vimtex_view_general_options = '-r @line @pdf @tex'
