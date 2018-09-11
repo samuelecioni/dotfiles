@@ -1,6 +1,9 @@
 scriptencoding utf-8
 " Enhance command-line completion
 set wildmenu
+" tmux termguicolors support
+set t_8b=^[[48;2;%lu;%lu;%lum
+set t_8f=^[[38;2;%lu;%lu;%lum
 " Optimize for fast terminal connections
 set ttyfast
 " Highlight current line
