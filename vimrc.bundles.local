@@ -17,7 +17,7 @@ Plug 'drewtempelmeyer/palenight.vim'
 Plug 'rakr/vim-one'
 Plug 'mhartington/oceanic-next'
 
-
+Plug 'liuchengxu/vim-which-key', { 'on': ['WhichKey', 'WhichKey!'] }
 "Plug 'godlygeek/csapprox'
 Plug 'w0rp/ale'
 Plug 'itchyny/lightline.vim'

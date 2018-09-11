@@ -295,3 +295,6 @@ autocmd BufNewFile,BufRead *.md,*.mkd,*.markdown,*.tex set spell spelllang=it,en
 augroup mdtabCopmpletion
 	autocmd FileType text,markdown let b:vcm_tab_complete = 'dict'
 augroup END
+
+" which-key
+nnoremap <silent> <leader>      :<c-u>WhichKey '<Space>'<CR>
