@@ -30,7 +30,11 @@ set clipboard=unnamed
 "set t_Co=256
 " 256 colors in terminal (only some supported) and modern (n)vim
 " https://github.com/morhetz/gruvbox/wiki/Terminal-specific
-"set termguicolors
+
+if (has('termguicolors'))
+  set termguicolors
+endif
+
 set background=dark
 "let g:molokai_original = 1
 "colorscheme molokai
