@@ -13,6 +13,10 @@ Plug 'nightsense/snow'
 Plug 'nightsense/stellarized'
 Plug 'arcticicestudio/nord-vim'
 Plug 'junegunn/seoul256.vim'
+Plug 'drewtempelmeyer/palenight.vim'
+Plug 'rakr/vim-one'
+Plug 'mhartington/oceanic-next'
+
 
 "Plug 'godlygeek/csapprox'
 Plug 'w0rp/ale'
