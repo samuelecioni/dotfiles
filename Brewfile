@@ -30,6 +30,7 @@ brew "hub"
 brew "imagemagick"
 brew "jq"
 brew "libpcap"
+brew "mas"
 brew "mkvtoolnix"
 brew "mono"
 brew "moreutils"
@@ -185,3 +186,15 @@ cask "virtualbox-extension-pack"
 cask "webpquicklook"
 cask "wireshark"
 cask "xld"
+mas "GarageBand", id: 682658836
+mas "Icon Slate", id: 439697913
+mas "iMovie", id: 408981434
+mas "iNet Network Scanner", id: 403304796
+mas "Kaleidoscope", id: 587512244
+mas "Keynote", id: 409183694
+mas "Microsoft Remote Desktop", id: 1295203466
+mas "NepTunes", id: 1006739057
+mas "Numbers", id: 409203825
+mas "Pages", id: 409201541
+mas "Pixelmator", id: 407963104
+mas "Xcode", id: 497799835
