@@ -1,7 +1,7 @@
 # phallus theme
 foreground            #d2d2d2
 background            #20202f
-selection_foreground  #000000
+selection_foreground  #302f39
 selection_background  #cbb6d7
 url_color             #ab93b9
 cursor                #97979b
