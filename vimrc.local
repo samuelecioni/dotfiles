@@ -38,8 +38,8 @@ set background=dark
 "let g:molokai_original = 1
 "colorscheme molokai
 " colorscheme apprentice
-" let g:nord_italic = 1
-" let g:nord_italic_comments = 1
+let g:nord_italic = 1
+let g:nord_italic_comments = 1
 let g:nord_comment_brightness = 12
 colorscheme nord
 " better matching brackets colors for apprentice
