@@ -22,6 +22,7 @@ Plug 'liuchengxu/vim-which-key', { 'on': ['WhichKey', 'WhichKey!'] }
 "Plug 'godlygeek/csapprox'
 Plug 'w0rp/ale'
 Plug 'machakann/vim-sandwich'
+" Plug 'tpope/vim-surround'
 Plug 'itchyny/lightline.vim'
 Plug 'maximbaz/lightline-ale'
 "Plug 'cocopon/lightline-hybrid.vim'
