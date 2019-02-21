@@ -12,6 +12,10 @@ set -g status-bg default
 set -g status-fg '#707070'
 set -g status-justify centre
 
+# Adjust geometries
+set -g status-left-length 10
+set -g status-right-length 10
+
 # Highlighting the active window in status bar
 setw -g window-status-current-bg default
 setw -g window-status-current-fg white
