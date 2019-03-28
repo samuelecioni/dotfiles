@@ -40,7 +40,7 @@ set background=dark
 " colorscheme apprentice
 let g:nord_italic = 1
 let g:nord_italic_comments = 1
-let g:nord_comment_brightness = 12
+" let g:nord_comment_brightness = 12
 colorscheme nord
 " better matching brackets colors for apprentice
 "hi MatchParen cterm=bold ctermbg=DarkBlue ctermfg=none
