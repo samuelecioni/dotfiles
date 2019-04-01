@@ -8,10 +8,12 @@ tap "homebrew/cask-fonts"
 tap "homebrew/core"
 tap "sass/sass"
 tap "shopify/shopify"
+tap "valelint/vale"
 cask "java"
 brew "aspell"
 brew "bat"
 brew "bettercap"
+brew "bibclean"
 brew "brogue"
 brew "clojure"
 brew "coreutils"
@@ -56,6 +58,7 @@ brew "radare2"
 brew "ruby-build"
 brew "rbenv"
 brew "reattach-to-user-namespace"
+brew "redpen"
 brew "ripgrep"
 brew "rsnapshot"
 brew "rsync"
@@ -66,6 +69,7 @@ brew "shellcheck"
 brew "ssh-copy-id"
 brew "stow"
 brew "the_silver_searcher"
+brew "tidy-html5"
 brew "tintin"
 brew "tmux"
 brew "tor"
@@ -74,11 +78,13 @@ brew "translate-shell"
 brew "tree"
 brew "tvnamer"
 brew "vim"
+brew "watchexec"
 brew "weechat"
 brew "wget"
 brew "wine"
 brew "winetricks"
-brew "yarn", args: ["without-node"]
+brew "yamllint", link: false
+brew "yarn"
 brew "zsh"
 brew "zsh-autosuggestions"
 brew "zsh-completions"
@@ -88,6 +94,7 @@ brew "browsh-org/browsh/browsh"
 brew "candid82/brew/joker"
 brew "sass/sass/sass"
 brew "shopify/shopify/themekit"
+brew "valelint/vale/vale"
 cask "alacritty"
 cask "alfred"
 cask "brogue"
@@ -199,6 +206,7 @@ cask "libreoffice-language-pack"
 cask "mactex"
 cask "mounty"
 cask "mpv"
+cask "onyx"
 cask "osxfuse"
 cask "qlcolorcode"
 cask "qlimagesize"
@@ -220,17 +228,17 @@ cask "webpquicklook"
 cask "wireshark"
 cask "xld"
 cask "xquartz"
-mas "GarageBand", id: 682658836
-mas "Gifski", id: 1351639930
-mas "Icon Slate", id: 439697913
-mas "iMovie", id: 408981434
-mas "iNet Network Scanner", id: 403304796
-mas "Kaleidoscope", id: 587512244
-mas "Keynote", id: 409183694
-mas "Microsoft Remote Desktop", id: 1295203466
-mas "NepTunes", id: 1006739057
-mas "Numbers", id: 409203825
-mas "Pages", id: 409201541
-mas "Paprika Recipe Manager 3", id: 1303222628
-mas "Pixelmator", id: 407963104
-mas "Xcode", id: 497799835
+mas "com.apple.dt.Xcode", id: 497799835
+mas "com.apple.garageband10", id: 682658836
+mas "com.apple.iMovieApp", id: 408981434
+mas "com.apple.iWork.Keynote", id: 409183694
+mas "com.apple.iWork.Numbers", id: 409203825
+mas "com.apple.iWork.Pages", id: 409201541
+mas "com.bananaglue.mac.inet", id: 403304796
+mas "com.blackpixel.kaleidoscope", id: 587512244
+mas "com.hindsightlabs.paprika.mac.v3", id: 1303222628
+mas "com.kodlian.Icon-Slate", id: 439697913
+mas "com.microsoft.rdc.macos", id: 1295203466
+mas "com.pixelmatorteam.pixelmator", id: 407963104
+mas "com.sindresorhus.Gifski", id: 1351639930
+mas "pl.micropixels.NepTunes", id: 1006739057
