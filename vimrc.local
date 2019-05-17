@@ -21,6 +21,9 @@ set noshowmode
 set title
 " undo history size
 set history=10000
+" Persistent undo
+set undodir=~/.vim/undodir
+set undofile
 " Show matching brackets when text indicator is over them
 set showmatch
 " How many tenths of a second to blink when matching brackets
