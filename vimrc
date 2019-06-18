@@ -46,9 +46,12 @@ augroup vimrcEx
     \ endif
 
   " Set syntax highlighting for specific file types
-  autocmd BufRead,BufNewFile Appraisals set filetype=ruby
-  autocmd BufRead,BufNewFile *.md set filetype=markdown
+	autocmd BufRead,BufNewFile *.md set filetype=markdown
   autocmd BufRead,BufNewFile .{jscs,jshint,eslint}rc set filetype=json
+  autocmd BufRead,BufNewFile aliases.local,zshrc.local,*/zsh/configs/* set filetype=sh
+  autocmd BufRead,BufNewFile gitconfig.local set filetype=gitconfig
+  autocmd BufRead,BufNewFile tmux.conf.local set filetype=tmux
+  autocmd BufRead,BufNewFile vimrc.local set filetype=vim
 augroup END
 
 " When the type of shell script is /bin/sh, assume a POSIX-compatible
@@ -73,7 +76,7 @@ if executable('ag')
   set grepprg=ag\ --nogroup\ --nocolor
 
   " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
-  let g:ctrlp_user_command = 'ag -Q -l --nocolor --hidden -g "" %s'
+	let g:ctrlp_user_command = 'ag --literal --files-with-matches --nocolor --hidden -g "" %s'
 
   " ag is fast enough that CtrlP doesn't need to cache
   let g:ctrlp_use_caching = 0
