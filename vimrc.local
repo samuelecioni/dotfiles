@@ -105,7 +105,9 @@ endif
 au BufNewFile,BufRead *.ejs set filetype=html
 
 " Automatically wrap at 80 characters for LaTeX
-autocmd BufRead,BufNewFile *.tex setlocal tw=80 fo=cq wm=0
+augroup tex
+	autocmd BufRead,BufNewFile *.tex setlocal tw=80 fo=cq wm=0
+augroup END
 
 " YAML frontmatter in markdown files (jekyll, middleman)
 let g:vim_markdown_frontmatter=1
@@ -296,7 +298,9 @@ xmap ga <Plug>(EasyAlign)
 nmap ga <Plug>(EasyAlign)
 
 " turn spell check on on markdown and TeX files
-autocmd BufNewFile,BufRead *.md,*.mkd,*.markdown,*.tex set spell spelllang=it,en_us
+augroup markDown
+	autocmd BufNewFile,BufRead *.md,*.mkd,*.markdown,*.tex set spell spelllang=it,en_us
+augroup END
 
 augroup mdtabCopmpletion
 	autocmd FileType text,markdown let b:vcm_tab_complete = 'dict'
