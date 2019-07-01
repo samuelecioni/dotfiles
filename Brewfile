@@ -8,14 +8,15 @@ tap "homebrew/cask-fonts"
 tap "homebrew/core"
 tap "sass/sass"
 tap "shopify/shopify"
+tap "tldr-pages/tldr"
 tap "valelint/vale"
-cask "java"
 brew "aspell"
 brew "bat"
 brew "bettercap"
 brew "bibclean"
 brew "brogue"
 brew "clojure"
+brew "colordiff"
 brew "coreutils"
 brew "curl"
 brew "f3"
@@ -24,7 +25,7 @@ brew "ffmpeg"
 brew "findutils"
 brew "fzf"
 brew "gcc"
-brew "ghostscript", link: false
+brew "ghostscript"
 brew "gifsicle"
 brew "gifski"
 brew "git"
@@ -34,6 +35,7 @@ brew "gobuster"
 brew "gopass"
 brew "grep"
 brew "hadolint"
+brew "httpie"
 brew "hub"
 brew "hunspell"
 brew "imagemagick"
@@ -48,6 +50,7 @@ brew "mkvtoolnix"
 brew "moreutils"
 brew "mp3info"
 brew "neovim"
+brew "nethack"
 brew "newsboat"
 brew "nmap"
 brew "nnn"
@@ -63,14 +66,15 @@ brew "ripgrep"
 brew "rsnapshot"
 brew "rsync"
 brew "rsync-time-backup"
-brew "rust"
 brew "sc-im"
 brew "shellcheck"
+brew "speedtest-cli"
 brew "ssh-copy-id"
 brew "stow"
 brew "the_silver_searcher"
 brew "tidy-html5"
 brew "tintin"
+brew "tldr"
 brew "tmux"
 brew "tor"
 brew "torsocks"
@@ -83,7 +87,7 @@ brew "weechat"
 brew "wget"
 brew "wine"
 brew "winetricks"
-brew "yamllint", link: false
+brew "yamllint"
 brew "yarn"
 brew "zsh"
 brew "zsh-autosuggestions"
@@ -97,6 +101,7 @@ brew "shopify/shopify/themekit"
 brew "valelint/vale/vale"
 cask "alacritty"
 cask "alfred"
+cask "brave-browser"
 cask "brogue"
 cask "commander-one"
 cask "discord"
@@ -197,6 +202,7 @@ cask "handbrake"
 cask "hyper"
 cask "iina"
 cask "imageoptim"
+cask "java"
 cask "java-jdk-javadoc"
 cask "keepingyouawake"
 cask "kitty"
@@ -228,17 +234,18 @@ cask "webpquicklook"
 cask "wireshark"
 cask "xld"
 cask "xquartz"
-mas "com.apple.dt.Xcode", id: 497799835
-mas "com.apple.garageband10", id: 682658836
-mas "com.apple.iMovieApp", id: 408981434
-mas "com.apple.iWork.Keynote", id: 409183694
-mas "com.apple.iWork.Numbers", id: 409203825
-mas "com.apple.iWork.Pages", id: 409201541
-mas "com.bananaglue.mac.inet", id: 403304796
-mas "com.blackpixel.kaleidoscope", id: 587512244
-mas "com.hindsightlabs.paprika.mac.v3", id: 1303222628
-mas "com.kodlian.Icon-Slate", id: 439697913
-mas "com.microsoft.rdc.macos", id: 1295203466
-mas "com.pixelmatorteam.pixelmator", id: 407963104
-mas "com.sindresorhus.Gifski", id: 1351639930
-mas "pl.micropixels.NepTunes", id: 1006739057
+mas "GarageBand", id: 682658836
+mas "Gifski", id: 1351639930
+mas "Icon Slate", id: 439697913
+mas "iMovie", id: 408981434
+mas "iNet Network Scanner", id: 403304796
+mas "Kaleidoscope", id: 587512244
+mas "Keynote", id: 409183694
+mas "Microsoft Remote Desktop", id: 1295203466
+mas "NepTunes", id: 1006739057
+mas "Numbers", id: 409203825
+mas "Pages", id: 409201541
+mas "Paprika Recipe Manager 3", id: 1303222628
+mas "Pixelmator", id: 407963104
+mas "Wipr", id: 1320666476
+mas "Xcode", id: 497799835
