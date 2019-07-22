@@ -184,8 +184,6 @@ let g:delimitMate_expand_space = 1 " {|} => { | }
 "  " vim-fugitive
 "  "
 "  ----------------------------------------------------------------------------
-  
-let g:fugitive_git_executable = 'LANG=en_US.UTF-8 git'
 
 nnoremap <silent> <leader>gs :Gstatus<CR>
 nnoremap <silent> <leader>gd :Gdiff<CR>
