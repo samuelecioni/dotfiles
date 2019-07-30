@@ -22,7 +22,7 @@ Plug 'mhartington/oceanic-next'
 
 Plug 'liuchengxu/vim-which-key', { 'on': ['WhichKey', 'WhichKey!'] }
 "Plug 'godlygeek/csapprox'
-Plug 'w0rp/ale'
+Plug 'dense-analysis/ale'
 Plug 'machakann/vim-sandwich'
 Plug 'cakebaker/scss-syntax.vim'
 " Plug 'tpope/vim-surround'
