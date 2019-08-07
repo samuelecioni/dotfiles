@@ -21,7 +21,7 @@ setw -g window-status-current-style bg=default,fg=white
 # setw -g window-status-current-fg white
 setw -g window-status-style bg=default,fg=default
 # setw -g window-status-fg default
-setw -g window-status-activity-style bg=default,fg=red,blink
+setw -g window-status-activity-style bg=default,fg=magenta,blink
 # setw -g window-status-activity-bg default
 # setw -g window-status-activity-fg red
 setw -g window-status-bell-style bg=default,fg=red,blink
@@ -35,7 +35,7 @@ setw -g monitor-activity on
 set -g visual-activity off
 
 setw -g window-status-bell-style blink,dim
-setw -g window-status-activity-style blink,dim
+# setw -g window-status-activity-style blink,dim
 # setw -g window-status-content-attr blink,dim
 
 # Reload the .tmux.conf file with Ctrl-r
