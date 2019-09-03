@@ -317,3 +317,21 @@ augroup END
 
 " which-key
 nnoremap <silent> <leader>      :<c-u>WhichKey '<Space>'<CR>
+
+" python stuffs
+" https://sk1u.com/blog/2018/04/16/pyenv-neovim
+" First run the following from your terminal
+" pyenv virtualenv 2.7.14 neovim2
+" pyenv virtualenv 3.6.5 neovim3
+
+" pyenv activate neovim2
+" pip install neovim
+" pyenv which python  # Note the path
+
+" pyenv activate neovim3
+" pip install neovim
+" pyenv which python  # Note the path
+"
+" now tell nvim to look into those envs for its plugin
+let g:python_host_prog = '~/.pyenv/versions/neovim2/bin/python'
+let g:python3_host_prog = '~/.pyenv/versions/neovim3/bin/python'
