@@ -318,6 +318,10 @@ augroup END
 " which-key
 nnoremap <silent> <leader>      :<c-u>WhichKey '<Space>'<CR>
 
+" Polyglot
+" use lervag/vimtex for syntax highlight
+let g:polyglot_disabled = ['latex']
+
 " python stuffs
 " https://sk1u.com/blog/2018/04/16/pyenv-neovim
 " First run the following from your terminal
