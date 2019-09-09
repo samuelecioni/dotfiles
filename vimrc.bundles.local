@@ -19,6 +19,7 @@ Plug 'junegunn/seoul256.vim'
 Plug 'drewtempelmeyer/palenight.vim'
 Plug 'rakr/vim-one'
 Plug 'mhartington/oceanic-next'
+Plug 'arzg/vim-corvine'
 
 " Syntaxes
 Plug 'sheerun/vim-polyglot'
