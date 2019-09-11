@@ -30,6 +30,8 @@ set showmatch
 set matchtime=2
 " Use OS X clipboard
 set clipboard=unnamed
+" Hybrid line numbers
+set number rnu
 
 " Colorscheme settings
 "let g:rehash256 = 1
@@ -317,6 +319,9 @@ augroup END
 
 " which-key
 nnoremap <silent> <leader>      :<c-u>WhichKey '<Space>'<CR>
+
+" exit from insert mode with jk
+inoremap jk <esc>
 
 " Polyglot
 " use lervag/vimtex for syntax highlight
