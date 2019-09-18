@@ -20,6 +20,7 @@ Plug 'drewtempelmeyer/palenight.vim'
 Plug 'rakr/vim-one'
 Plug 'mhartington/oceanic-next'
 Plug 'arzg/vim-corvine'
+Plug 'https://git.sr.ht/~romainl/vim-bruin'
 
 " Syntaxes
 Plug 'sheerun/vim-polyglot'
