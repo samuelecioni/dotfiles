@@ -83,3 +83,7 @@ Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
 Plug 'junegunn/vim-emoji'
 Plug 'ajh17/VimCompletesMe'
+" Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'rhysd/clever-f.vim'
+Plug 'mhinz/vim-grepper', { 'on': ['Grepper', '<plug>(GrepperOperator)']  }
+Plug 'janko/vim-test'
