@@ -21,6 +21,8 @@ Plug 'rakr/vim-one'
 Plug 'mhartington/oceanic-next'
 Plug 'arzg/vim-corvine'
 Plug 'andreypopp/vim-colors-plain'
+Plug 'ayu-theme/ayu-vim'
+Plug 'andreasvc/vim-256noir'
 Plug 'https://git.sr.ht/~romainl/vim-bruin'
 
 " Syntaxes
