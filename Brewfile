@@ -1,6 +1,7 @@
 tap "browsh-org/browsh"
 tap "candid82/brew"
 tap "dart-lang/dart"
+tap "denisidoro/tools"
 tap "homebrew/bundle"
 tap "homebrew/cask"
 tap "homebrew/cask-drivers"
@@ -12,7 +13,6 @@ tap "tldr-pages/tldr"
 tap "valelint/vale"
 cask "xquartz"
 brew "aspell"
-brew "openssl"
 brew "readline"
 brew "sqlite"
 brew "xz"
@@ -21,12 +21,16 @@ brew "bat"
 brew "bettercap"
 brew "bibclean"
 brew "brogue"
+brew "openssl"
 brew "cairo"
 brew "clojure"
 brew "colordiff"
 brew "coreutils"
 brew "curl"
 brew "diff-so-fancy"
+brew "docker-completion"
+brew "docker-compose", link: false
+brew "docker-compose-completion"
 brew "f3"
 brew "fd"
 brew "ffmpeg"
@@ -142,6 +146,7 @@ cask "font-aurulentsansmono-nerd-font"
 cask "font-aurulentsansmono-nerd-font-mono"
 cask "font-bitstreamverasansmono-nerd-font"
 cask "font-bitstreamverasansmono-nerd-font-mono"
+cask "font-cascadia"
 cask "font-codenewroman-nerd-font"
 cask "font-codenewroman-nerd-font-mono"
 cask "font-consolas-for-powerline"
@@ -266,10 +271,8 @@ mas "GarageBand", id: 682658836
 mas "Gifski", id: 1351639930
 mas "Icon Slate", id: 439697913
 mas "iMovie", id: 408981434
-mas "iNet Network Scanner", id: 403304796
 mas "Kaleidoscope", id: 587512244
 mas "Keynote", id: 409183694
-mas "Microsoft Remote Desktop", id: 1295203466
 mas "NepTunes", id: 1006739057
 mas "Numbers", id: 409203825
 mas "Pages", id: 409201541
