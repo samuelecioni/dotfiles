@@ -43,6 +43,7 @@ Plug 'chikamichi/mediawiki.vim'
 
 Plug 'liuchengxu/vim-which-key', { 'on': ['WhichKey', 'WhichKey!'] }
 "Plug 'godlygeek/csapprox'
+" Plug 'ryanoasis/vim-devicons'
 Plug 'dense-analysis/ale'
 Plug 'machakann/vim-sandwich'
 " Plug 'tpope/vim-surround'
