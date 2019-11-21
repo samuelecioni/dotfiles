@@ -268,6 +268,7 @@ cask "qlstephen"
 cask "qlvideo"
 cask "quicklook-json"
 cask "quicklookase"
+cask "sdformatter"
 cask "skim"
 cask "spotify"
 cask "steam"
@@ -287,10 +288,13 @@ cask "adoptopenjdk/openjdk/adoptopenjdk11"
 cask "adoptopenjdk/openjdk/adoptopenjdk9"
 mas "Gifski", id: 1351639930
 mas "Icon Slate", id: 439697913
+mas "Instapaper", id: 1481302432
 mas "Kaleidoscope", id: 587512244
 mas "Keynote", id: 409183694
+mas "Microsoft Remote Desktop", id: 1295203466
 mas "NepTunes", id: 1006739057
 mas "Numbers", id: 409203825
 mas "Pages", id: 409201541
 mas "Paprika Recipe Manager 3", id: 1303222628
 mas "Wipr", id: 1320666476
+mas "Xcode", id: 497799835
