@@ -282,7 +282,7 @@ let g:limelight_priority = -1
 let g:ale_linters = {'javascript': ['xo']}
 
 " set eslint as ALE fixer
-let g:ale_fixers = {'javascript': ['prettier-eslint']}
+let g:ale_fixers = {'javascript': ['xo']}
 
 " always show ALE column
 let g:ale_sign_column_always = 1
