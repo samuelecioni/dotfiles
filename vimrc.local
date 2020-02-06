@@ -136,7 +136,7 @@ let g:jsx_ext_required = 0 " Allow JSX in normal JS files"
 augroup dirvishSettings
 	autocmd!
 	" enable :Gstatus and fugitive stuff
-	autocmd FileType dirvish call fugitive#detect(@%)
+	" autocmd FileType dirvish call fugitive#detect(@%)
 	" sort: first folders
 	autocmd FileType dirvish sort r /[^\/]$/
 augroup END
