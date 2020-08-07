@@ -28,7 +28,7 @@ Plug 'https://git.sr.ht/~romainl/vim-bruin'
 " Syntaxes
 Plug 'sheerun/vim-polyglot'
 Plug 'othree/javascript-libraries-syntax.vim'
-Plug 'evanleck/vim-svelte'
+Plug 'evanleck/vim-svelte', {'branch': 'main'}
 Plug 'tpope/vim-liquid'
 Plug 'chikamichi/mediawiki.vim'
 " Plug 'digitaltoad/vim-pug'
