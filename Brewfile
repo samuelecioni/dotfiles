@@ -40,6 +40,7 @@ brew "dnscrypt-proxy"
 brew "docker-completion"
 brew "f3"
 brew "fd"
+brew "pkg-config"
 brew "ffmpeg"
 brew "findutils"
 brew "fzf"
@@ -50,7 +51,6 @@ brew "gifski"
 brew "git"
 brew "gnupg"
 brew "go"
-brew "pkg-config"
 brew "gobuster"
 brew "gopass"
 brew "grep"
@@ -300,6 +300,7 @@ cask "virtualbox-extension-pack"
 cask "webpquicklook"
 cask "wireshark"
 cask "xld"
+mas "FileBot.launcher", id: 905384638
 mas "Gifski", id: 1351639930
 mas "Icon Slate", id: 439697913
 mas "iNet Network Scanner", id: 403304796
@@ -307,6 +308,7 @@ mas "Instapaper", id: 1481302432
 mas "Kaleidoscope", id: 587512244
 mas "Keynote", id: 409183694
 mas "Microsoft Remote Desktop", id: 1295203466
+mas "Microsoft To Do", id: 1274495053
 mas "NepTunes", id: 1006739057
 mas "Numbers", id: 409203825
 mas "Pages", id: 409201541
