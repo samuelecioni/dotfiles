@@ -15,6 +15,10 @@ set incsearch     " do incremental searching
 set laststatus=2  " Always display the status line
 set autowrite     " Automatically :write before running commands
 
+" Polyglot
+" use lervag/vimtex for syntax highlight
+let g:polyglot_disabled = ['latex']
+
 filetype plugin indent on
 "
 " Switch syntax highlighting on, when the terminal has colors

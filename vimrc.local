@@ -324,10 +324,6 @@ nnoremap <silent> <leader>      :<c-u>WhichKey '<Space>'<CR>
 " exit from insert mode with jk
 inoremap jk <esc>
 
-" Polyglot
-" use lervag/vimtex for syntax highlight
-let g:polyglot_disabled = ['latex']
-
 nnoremap <leader>G :Grepper -tool ag<cr>
 
 nmap Gs <plug>(GrepperOperator)
