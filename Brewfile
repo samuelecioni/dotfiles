@@ -257,6 +257,7 @@ cask "font-roboto-mono"
 cask "font-robotomono-nerd-font"
 cask "font-robotomono-nerd-font-mono"
 cask "font-rounded-m-plus"
+cask "font-sf-mono-for-powerline"
 cask "font-sharetechmono-nerd-font"
 cask "font-sharetechmono-nerd-font-mono"
 cask "font-sourcecodepro-nerd-font"
@@ -315,17 +316,14 @@ cask "xld"
 cask "xquartz"
 mas "FileBot.launcher", id: 905384638
 mas "Gifski", id: 1351639930
+mas "Hush", id: 1544743900
 mas "Icon Slate", id: 439697913
 mas "iNet Network Scanner", id: 403304796
-mas "Instapaper", id: 1481302432
+mas "Instapaper Save", id: 1481302432
 mas "Kaleidoscope", id: 587512244
-mas "Keynote", id: 409183694
 mas "Microsoft Remote Desktop", id: 1295203466
 mas "Microsoft To Do", id: 1274495053
 mas "NepTunes", id: 1006739057
-mas "Numbers", id: 409203825
-mas "Pages", id: 409201541
 mas "Paprika Recipe Manager 3", id: 1303222628
 mas "Pixelmator", id: 407963104
 mas "Wipr", id: 1320666476
-mas "Xcode", id: 497799835
