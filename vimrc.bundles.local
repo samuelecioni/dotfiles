@@ -24,6 +24,7 @@ Plug 'andreypopp/vim-colors-plain'
 Plug 'ayu-theme/ayu-vim'
 Plug 'andreasvc/vim-256noir'
 Plug 'https://git.sr.ht/~romainl/vim-bruin'
+Plug 'wadackel/vim-dogrun'
 
 " Syntaxes
 Plug 'sheerun/vim-polyglot'
