@@ -8,7 +8,8 @@ set -sg escape-time 0
 set-option -g repeat-time 0
 
 # Status Bar
-set -g status-bg default
+# set -g status-bg default
+set -g status-style bg=default
 set -g status-fg '#707070'
 set -g status-justify centre
 
